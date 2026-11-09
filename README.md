@@ -5,7 +5,9 @@ A responsive, static portfolio built with HTML, CSS, and vanilla JavaScript for 
 ## Files
 - `index.html` — page structure and content
 - `assets/css/style.css` — styling and responsive layout
-- `assets/js/script.js` — mobile navigation, reveal effects, active section state, copy-link interaction
+- `assets/js/script.js` — preloader, split-text hero, typewriter code card, rotating words, scroll reveals, timeline progress, custom cursor, magnetic buttons, 3D tilt, mobile navigation, active section state, copy-link interaction
+
+All animations respect `prefers-reduced-motion`. Cursor, magnetic and tilt effects run only on devices with a fine pointer (mouse/trackpad).
 
 ## Deploy to GitHub Pages
 1. Extract this ZIP.
