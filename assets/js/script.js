@@ -57,26 +57,54 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- Preloader ---------- */
   const loader = document.querySelector(".loader");
   const loaderNum = document.getElementById("loader-num");
-  const loaderBar = document.querySelector(".loader-bar i");
-  const finishLoading = () => {
-    loader?.classList.add("done");
+  const loaderNumFill = document.getElementById("loader-num-fill");
+  const loaderStatus = document.getElementById("loader-status");
+  const statuses = [[0, "Initializing"], [22, "Loading assets"], [48, "Compiling Laravel"], [74, "Booting 3D scene"], [100, "Ready"]];
+  let pageLoaded = document.readyState === "complete";
+  window.addEventListener("load", () => { pageLoaded = true; });
+
+  const setStatus = text => {
+    if (!loaderStatus || loaderStatus.textContent === text) return;
+    loaderStatus.classList.add("swap");
+    setTimeout(() => { loaderStatus.textContent = text; loaderStatus.classList.remove("swap"); }, 180);
+  };
+  const revealSite = () => {
     body.classList.remove("is-loading");
     body.classList.add("ready");
     startTyping();
   };
+  const finishLoading = () => {
+    if (reduceMotion || !loader) {
+      loader?.classList.add("done");
+      revealSite();
+      return;
+    }
+    loader.classList.add("exit");
+    setTimeout(() => { loader.classList.add("open"); revealSite(); }, 750);
+    setTimeout(() => loader.classList.add("done"), 1900);
+  };
+
   if (reduceMotion || !loader) {
     finishLoading();
   } else {
-    const duration = 1300;
+    const duration = 1900;
     const start = performance.now();
+    let shown = 0;
     const tick = now => {
-      const t = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - t, 3);
-      const value = Math.round(eased * 100);
-      loaderNum.textContent = value;
-      loaderBar.style.setProperty("--p", eased);
-      if (t < 1) requestAnimationFrame(tick);
-      else setTimeout(finishLoading, 250);
+      const elapsed = Math.max(now - start, 0);
+      const t = Math.min(elapsed / duration, 1);
+      let target = 1 - Math.pow(1 - t, 3);
+      if (!pageLoaded && elapsed < 4500) target = Math.min(target, 0.9);
+      shown += (target - shown) * 0.18;
+      if (target === 1 && 1 - shown < 0.004) shown = 1;
+      const pct = Math.round(shown * 100);
+      const label = String(pct).padStart(3, "0");
+      loaderNum.textContent = label;
+      loaderNumFill.textContent = label;
+      loader.style.setProperty("--p", shown.toFixed(4));
+      setStatus(statuses.filter(([at]) => pct >= at).pop()[1]);
+      if (shown < 1) requestAnimationFrame(tick);
+      else setTimeout(finishLoading, 420);
     };
     requestAnimationFrame(tick);
   }
@@ -86,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     [["purple", "class"], ["", " "], ["cyan", "Developer"]],
     [["", "{"]],
     [["", "  "], ["purple", "public string"], ["", " $name"]],
-    [["", "    = "], ["green", "'Amir Akash'"], ["", ";"]],
+    [["", "    = "], ["green", "'Amir Sohel'"], ["", ";"]],
     [],
     [["", "  "], ["purple", "public function"], ["", " "], ["yellow", "build"], ["", "()"]],
     [["", "  {"]],
