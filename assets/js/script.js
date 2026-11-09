@@ -177,15 +177,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const rotatorWords = document.querySelectorAll(".rotator b");
   if (rotatorWords.length > 1 && !reduceMotion) {
     let current = 0;
-    setInterval(() => {
+    const showWord = next => {
+      if (next === current) return;
       const prev = rotatorWords[current];
-      current = (current + 1) % rotatorWords.length;
+      current = next;
       prev.classList.remove("is-active");
       prev.classList.add("is-leaving");
       rotatorWords[current].classList.remove("is-leaving");
       rotatorWords[current].classList.add("is-active");
       setTimeout(() => prev.classList.remove("is-leaving"), 700);
-    }, 2600);
+    };
+    // The hero diagram drives the rotator so the word matches the request on screen.
+    if (document.querySelector("[data-drives-rotator]")) {
+      document.addEventListener("hero:scenario", e => showWord(e.detail.index % rotatorWords.length));
+    } else {
+      setInterval(() => showWord((current + 1) % rotatorWords.length), 2600);
+    }
   }
 
   /* ---------- Mobile menu ---------- */

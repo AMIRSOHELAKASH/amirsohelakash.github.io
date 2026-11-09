@@ -6,7 +6,7 @@ A responsive, static portfolio built with HTML, CSS, and vanilla JavaScript for 
 - `index.html` — page structure and content
 - `assets/css/style.css` — design system (warm neutrals + signal-orange accent, 12-col grid) and responsive layout
 - `assets/js/script.js` — preloader, split-text hero, rotating words, typewriter code card, sliding nav indicator, Dhaka clock, scroll reveals, timeline progress, magnetic buttons, copy-link
-- `assets/js/hero3d.js` — interactive Three.js hero (loaded from CDN)
+- `assets/js/system.js` — hero "request lifecycle" diagram: animated requests through a Laravel backend, synced with the hero headline
 - `assets/js/motion.js` — Lenis smooth scroll, velocity marquee, parallax, scroll-scrubbed statement, project cover parallax, contact glow
 
 All animations respect `prefers-reduced-motion`. Smooth scroll, magnetic buttons and cover parallax run only on devices with a fine pointer (mouse/trackpad).
