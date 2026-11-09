@@ -57,9 +57,9 @@ function init() {
     uFreq: { value: 0.85 },
     uPulse: { value: 0 },
     uMouse: { value: new THREE.Vector3() },
-    uLime: { value: new THREE.Color("#d4ff3a") },
-    uViolet: { value: new THREE.Color("#9b8cff") },
-    uCyan: { value: new THREE.Color("#6ee7ff") }
+    uLime: { value: new THREE.Color("#ff6a3d") },
+    uViolet: { value: new THREE.Color("#8aa4ff") },
+    uCyan: { value: new THREE.Color("#ffd2bf") }
   };
 
   const displace = /* glsl */ `
@@ -97,7 +97,7 @@ function init() {
         vec3 rim = mix(uLime, uCyan, 0.5 + 0.5 * sin(uTime * 0.6 + vNoise * 4.0));
         vec3 col = base + rim * fres * 1.05;
         float bands = smoothstep(0.92, 1.0, abs(sin(vNoise * 18.0)));
-        col += uLime * bands * 0.18;
+        col += uLime * bands * 0.12;
         gl_FragColor = vec4(col, 1.0);
       }`
   });
@@ -122,7 +122,7 @@ function init() {
       }`,
     fragmentShader: /* glsl */ `
       uniform vec3 uLime; varying float vFade;
-      void main(){ gl_FragColor = vec4(uLime, 0.16 * vFade); }`
+      void main(){ gl_FragColor = vec4(mix(uLime, vec3(1.0), 0.35), 0.12 * vFade); }`
   });
   const shell = new THREE.Mesh(new THREE.IcosahedronGeometry(1.75, 6), shellMat);
   group.add(shell);
@@ -130,11 +130,11 @@ function init() {
   /* ---------- Orbit ring ---------- */
   const ring = new THREE.Mesh(
     new THREE.TorusGeometry(2.25, 0.006, 8, 220),
-    new THREE.MeshBasicMaterial({ color: 0x9b8cff, transparent: true, opacity: 0.45 })
+    new THREE.MeshBasicMaterial({ color: 0xedeae4, transparent: true, opacity: 0.22 })
   );
   ring.rotation.set(1.15, 0.25, 0);
   group.add(ring);
-  const satellite = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 16), new THREE.MeshBasicMaterial({ color: 0xd4ff3a }));
+  const satellite = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 16), new THREE.MeshBasicMaterial({ color: 0xff6a3d }));
   group.add(satellite);
 
   /* ---------- Particle field ---------- */
@@ -193,8 +193,8 @@ function init() {
     camera.position.z = camera.aspect < 0.8 ? 7.4 : 6.2;
     camera.updateProjectionMatrix();
     const wide = width > 520;
-    offsetX = wide ? 0.35 : 0.2;
-    offsetY = wide ? 0.3 : 0.25;
+    offsetX = 0;
+    offsetY = wide ? 0.1 : 0;
   };
   new ResizeObserver(resize).observe(stage);
   resize();

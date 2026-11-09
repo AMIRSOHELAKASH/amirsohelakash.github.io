@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#08090c">
+  <meta name="theme-color" content="#0a0a0b">
   <meta name="description" content="Amir Sohel — Software Engineer specializing in Laravel and backend development.">
-  <title>Amir Sohel | Software Engineer</title>
+  <title>Amir Sohel — Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add("js");setTimeout(function(){if(document.body&&!document.body.classList.contains("ready")){document.documentElement.classList.remove("js");document.body.classList.remove("is-loading");}},8000);</script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
   <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
   <script type="module" src="assets/js/hero3d.js"></script>
 </head>
 <body class="is-loading">
-  <!-- Preloader -->
+
+  <!-- ============ PRELOADER ============ -->
   <div class="loader" aria-hidden="true">
     <div class="loader-panel loader-panel-top"></div>
     <div class="loader-panel loader-panel-bottom"></div>
@@ -23,7 +26,7 @@
     <div class="loader-corner loader-tl">AMIR SOHEL — PORTFOLIO</div>
     <div class="loader-corner loader-tr">SOFTWARE ENGINEER · LARAVEL</div>
     <div class="loader-inner">
-      <div class="loader-name"><span class="lword"><span class="lc" style="--i:0">A</span><span class="lc" style="--i:1">m</span><span class="lc" style="--i:2">i</span><span class="lc" style="--i:3">r</span></span><em class="lword"><span class="lc" style="--i:4">S</span><span class="lc" style="--i:5">o</span><span class="lc" style="--i:6">h</span><span class="lc" style="--i:7">e</span><span class="lc" style="--i:8">l</span></em></div>
+      <div class="loader-name"><span class="lword"><span class="lc" style="--i:0">A</span><span class="lc" style="--i:1">m</span><span class="lc" style="--i:2">i</span><span class="lc" style="--i:3">r</span></span><span class="lword light"><span class="lc" style="--i:4">S</span><span class="lc" style="--i:5">o</span><span class="lc" style="--i:6">h</span><span class="lc" style="--i:7">e</span><span class="lc" style="--i:8">l</span></span></div>
       <div class="loader-status"><span class="loader-status-dot"></span><span id="loader-status">Initializing</span><span class="loader-dots"><i>.</i><i>.</i><i>.</i></span></div>
       <div class="loader-bar"><i></i></div>
     </div>
@@ -31,169 +34,287 @@
   </div>
 
   <div class="scroll-progress" aria-hidden="true"></div>
-  <div class="cursor hidden" aria-hidden="true"><div class="cursor-dot"></div><div class="cursor-ring"></div></div>
   <div class="grain" aria-hidden="true"></div>
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="spotlight" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true"></div>
 
+  <!-- ============ HEADER ============ -->
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Amir Sohel home"><span class="brand-mark">A<span>.</span></span><span class="brand-text">AMIR SOHEL</span></a>
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
-      <div class="nav-links">
-        <a href="#about"><i>01</i>About</a><a href="#expertise"><i>02</i>Expertise</a><a href="#projects"><i>03</i>Projects</a><a href="#experience"><i>04</i>Experience</a>
-        <a class="nav-cta magnetic" href="#contact">Let's talk <span>↗</span></a>
+      <a class="brand" href="#home" aria-label="Amir Sohel — home">
+        <span class="brand-mark">AS</span>
+        <span class="brand-copy"><b>Amir Sohel</b><small>Software Engineer</small></span>
+      </a>
+      <div class="nav-pill">
+        <span class="nav-indicator" aria-hidden="true"></span>
+        <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#work">Work</a><a href="#experience">Experience</a>
       </div>
+      <div class="nav-end">
+        <span class="nav-clock"><i class="status-dot"></i> Dhaka <time data-clock>--:--</time></span>
+        <a class="button button-primary button-sm magnetic" href="#contact"><span>Let's talk</span><span class="btn-icon">↗</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </nav>
+    <div class="mobile-menu">
+      <a href="#about"><i>01</i>About</a>
+      <a href="#expertise"><i>02</i>Expertise</a>
+      <a href="#work"><i>03</i>Work</a>
+      <a href="#experience"><i>04</i>Experience</a>
+      <a href="#contact"><i>05</i>Contact</a>
+      <div class="mobile-menu-foot"><span>Dhaka <time data-clock>--:--</time></span><a href="https://github.com/AMIRSOHELAKASH" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+    </div>
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- ============ HERO ============ -->
     <section class="hero container" id="home">
       <div class="hero-copy">
-        <div class="eyebrow fade-up" style="--d:.1s"><span class="status-dot"></span> SOFTWARE ENGINEER · LARAVEL</div>
-        <p class="hero-kicker fade-up" style="--d:.2s">Building reliable digital products.</p>
+        <div class="hero-eyebrow fade-up" style="--d:.05s"><span class="status-dot"></span> Amir Sohel — Software Engineer · Laravel</div>
         <h1 class="hero-title">
-          <span class="line"><span class="split">Hi, I'm</span></span>
-          <span class="line"><em class="split">Amir Sohel.</em></span>
+          <span class="line"><span class="split">I build</span></span>
+          <span class="line"><span class="rotator fade-up" style="--d:.55s"><b class="is-active">backend systems</b><b>REST APIs</b><b>payment workflows</b><b>integrations</b></span></span>
+          <span class="line"><span class="split">people can depend on.</span></span>
         </h1>
-        <p class="hero-rotator fade-up" style="--d:.9s">I build <span class="rotator" aria-live="polite"><b class="is-active">backend systems</b><b>dependable APIs</b><b>payment workflows</b><b>clean architecture</b></span></p>
-        <p class="hero-description fade-up" style="--d:1s">I build backend systems and practical web applications with Laravel — focusing on clean architecture, dependable APIs, and real-world business workflows.</p>
-        <div class="hero-actions fade-up" style="--d:1.1s">
-          <a class="button button-primary magnetic" href="#projects"><span class="btn-label">Explore my work</span> <span class="btn-icon">↘</span></a>
-          <a class="button button-ghost magnetic" href="#contact"><span class="btn-label">Get in touch</span></a>
+        <p class="hero-description fade-up" style="--d:.9s">Building reliable digital products. I build backend systems and practical web applications with Laravel — focusing on clean architecture, dependable APIs, and real-world business workflows.</p>
+        <div class="hero-actions fade-up" style="--d:1s">
+          <a class="button button-primary magnetic" href="#work"><span>Explore my work</span><span class="btn-icon">↘</span></a>
+          <a class="button button-ghost magnetic" href="#contact"><span>Get in touch</span></a>
         </div>
-        <div class="hero-meta fade-up" style="--d:1.2s"><span>BASED IN BANGLADESH</span><span class="meta-line"></span><span>OPEN TO GREAT IDEAS</span></div>
       </div>
 
-      <div class="hero-visual fade-up" style="--d:.5s">
+      <div class="hero-visual fade-up" style="--d:.4s" data-speed="-0.08">
         <div class="hero-3d" aria-hidden="true">
           <div class="hero-3d-fallback"></div>
           <canvas></canvas>
         </div>
-        <div class="hero-hint" aria-hidden="true"><span class="hint-dot"></span> MOVE · CLICK TO PULSE</div>
-        <div class="code-card tilt" aria-label="Decorative code illustration">
-          <div class="code-card-top"><div class="window-dots"><i></i><i></i><i></i></div><span>developer.php</span><span class="code-lock">⌘</span></div>
-          <pre class="code-lines" id="code-lines"><code></code></pre>
-          <div class="code-card-footer"><span><i class="status-dot"></i> <span id="code-status">Compiling…</span></span><span>PHP · Laravel</span></div>
-        </div>
-        <div class="floating-chip chip-laravel"><span>◆</span> Laravel</div>
-        <div class="floating-chip chip-api"><span>⌁</span> REST APIs</div>
-        <div class="hero-stamp"><span>THINK</span><b>→</b><span>BUILD</span><b>→</b><span>IMPROVE</span></div>
+        <div class="hero-caption" aria-hidden="true"><span>FIG. 01</span><span>Interactive — move · click to pulse</span></div>
       </div>
 
-      <a class="scroll-cue fade-up" style="--d:1.4s" href="#about"><span class="mouse"><i></i></span> SCROLL TO EXPLORE</a>
+      <dl class="hero-facts">
+        <div class="fact fade-up" style="--d:1.1s"><dt>Currently</dt><dd>Software Engineer at AppDevs</dd></div>
+        <div class="fact fade-up" style="--d:1.18s"><dt>Focus</dt><dd>Backend · APIs · Payments</dd></div>
+        <div class="fact fade-up" style="--d:1.26s"><dt>Building since</dt><dd>2023</dd></div>
+        <div class="fact fade-up" style="--d:1.34s"><dt>Based in</dt><dd>Bangladesh · Open to great ideas</dd></div>
+      </dl>
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee" aria-hidden="true">
+    <!-- ============ STACK MARQUEE ============ -->
+    <div class="marquee" data-dir="-1" aria-hidden="true">
       <div class="marquee-track">
-        <span>PHP</span><b>✦</b><span>Laravel</span><b>✦</b><span>REST API</span><b>✦</b><span>MySQL</span><b>✦</b><span>Redis</span><b>✦</b><span>Pest</span><b>✦</b><span>Docker</span><b>✦</b><span>Linux</span><b>✦</b><span>GitHub Actions</span><b>✦</b>
-        <span>PHP</span><b>✦</b><span>Laravel</span><b>✦</b><span>REST API</span><b>✦</b><span>MySQL</span><b>✦</b><span>Redis</span><b>✦</b><span>Pest</span><b>✦</b><span>Docker</span><b>✦</b><span>Linux</span><b>✦</b><span>GitHub Actions</span><b>✦</b>
+        <span>PHP</span><b></b><span>Laravel</span><b></b><span>REST API</span><b></b><span>MySQL</span><b></b><span>Redis</span><b></b><span>Pest</span><b></b><span>Docker</span><b></b><span>Linux</span><b></b><span>GitHub Actions</span><b></b>
+        <span>PHP</span><b></b><span>Laravel</span><b></b><span>REST API</span><b></b><span>MySQL</span><b></b><span>Redis</span><b></b><span>Pest</span><b></b><span>Docker</span><b></b><span>Linux</span><b></b><span>GitHub Actions</span><b></b>
       </div>
     </div>
 
-    <!-- ABOUT -->
-    <section class="intro-section section container" id="about">
-      <div class="section-label reveal"><span>01</span> / ABOUT ME</div>
-      <div class="intro-grid">
-        <h2 class="section-heading reveal-words">Engineering ideas into <em>useful products.</em></h2>
-        <div class="intro-copy">
-          <p class="reveal">I'm a Software Engineer at <strong>AppDevs</strong>, working primarily with PHP and Laravel. I enjoy turning complex requirements into maintainable backend solutions — from business logic and integrations to payment and booking workflows.</p>
-          <p class="reveal">My approach is straightforward: understand the problem, keep the architecture clear, and ship software that people can depend on. I'm continuously sharpening my fundamentals and growing toward senior-level engineering.</p>
-          <a class="text-link reveal" href="https://github.com/AMIRSOHELAKASH" target="_blank" rel="noreferrer">More about my work on GitHub <span>↗</span></a>
+    <!-- ============ ABOUT ============ -->
+    <section class="section about container" id="about">
+      <div class="section-label reveal"><span>01</span> About me</div>
+      <p class="statement scrub-text">I'm a Software Engineer at <strong>AppDevs</strong>, working primarily with PHP and Laravel. I enjoy turning complex requirements into maintainable backend solutions — from business logic and integrations to payment and booking workflows.</p>
+      <div class="about-grid">
+        <div class="about-side reveal">
+          <h2 class="kicker">Engineering ideas into useful products.</h2>
+          <p>My approach is straightforward: understand the problem, keep the architecture clear, and ship software that people can depend on. I'm continuously sharpening my fundamentals and growing toward senior-level engineering.</p>
+          <a class="text-link" href="https://github.com/AMIRSOHELAKASH" target="_blank" rel="noreferrer">More about my work on GitHub <span>↗</span></a>
+        </div>
+        <ol class="principles">
+          <li class="principle reveal"><span class="principle-number">01</span><div><h3>Clean architecture</h3><p>Thin controllers, clear service layers, and separation of concerns.</p></div></li>
+          <li class="principle reveal"><span class="principle-number">02</span><div><h3>Business first</h3><p>Software should solve the actual workflow, not add complexity.</p></div></li>
+          <li class="principle reveal"><span class="principle-number">03</span><div><h3>Always improving</h3><p>Testing, automation, performance, and engineering fundamentals.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ EXPERTISE ============ -->
+    <section class="section expertise" id="expertise">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label reveal"><span>02</span> What I work with</div>
+          <h2 class="section-heading reveal-words">Tools for building <em>the real thing.</em></h2>
+          <p class="section-aside reveal">My current toolkit is centered around Laravel backend engineering, APIs, and the infrastructure that helps applications run reliably.</p>
+        </div>
+
+        <div class="bento">
+          <article class="bento-card bento-code reveal rise">
+            <div class="bento-meta"><span>FIG. 02</span><span>How I think in code</span></div>
+            <div class="code-card">
+              <div class="code-card-top"><div class="window-dots"><i></i><i></i><i></i></div><span>developer.php</span><span class="code-lock">⌘</span></div>
+              <pre class="code-lines" id="code-lines"><code></code></pre>
+              <div class="code-card-footer"><span><i class="status-dot"></i> <span id="code-status">Compiling…</span></span><span>PHP · Laravel</span></div>
+            </div>
+            <div class="bento-stamp"><span>THINK</span><b>→</b><span>BUILD</span><b>→</b><span>IMPROVE</span></div>
+          </article>
+
+          <article class="bento-card skill reveal rise">
+            <div class="skill-head"><span class="skill-icon">⌘</span><span class="skill-index">01</span></div>
+            <h3>Backend</h3>
+            <ul class="chips"><li>PHP</li><li>Laravel</li><li>OOP</li><li>Service Layer</li><li>REST API</li></ul>
+          </article>
+          <article class="bento-card skill reveal rise">
+            <div class="skill-head"><span class="skill-icon">▤</span><span class="skill-index">02</span></div>
+            <h3>Data &amp; performance</h3>
+            <ul class="chips"><li>MySQL</li><li>Redis</li><li>Query optimization</li><li>Caching</li></ul>
+          </article>
+          <article class="bento-card skill reveal rise">
+            <div class="skill-head"><span class="skill-icon">⌁</span><span class="skill-index">03</span></div>
+            <h3>Engineering practices</h3>
+            <ul class="chips"><li>Git</li><li>PHPUnit / Pest</li><li>API integrations</li><li>Debugging</li></ul>
+          </article>
+          <article class="bento-card skill reveal rise">
+            <div class="skill-head"><span class="skill-icon">◫</span><span class="skill-index">04</span></div>
+            <h3>Delivery &amp; tools</h3>
+            <ul class="chips"><li>Linux</li><li>SSH</li><li>Docker</li><li>GitHub Actions</li><li>CI/CD learning</li></ul>
+          </article>
         </div>
       </div>
-      <div class="principles">
-        <div class="principle glow-card reveal"><span class="principle-number">01</span><h3>Clean architecture</h3><p>Thin controllers, clear service layers, and separation of concerns.</p></div>
-        <div class="principle glow-card reveal"><span class="principle-number">02</span><h3>Business first</h3><p>Software should solve the actual workflow, not add complexity.</p></div>
-        <div class="principle glow-card reveal"><span class="principle-number">03</span><h3>Always improving</h3><p>Testing, automation, performance, and engineering fundamentals.</p></div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="section work container" id="work">
+      <div class="section-head">
+        <div class="section-label reveal"><span>03</span> Selected work</div>
+        <h2 class="section-heading reveal-words">Products I've helped <em>bring to life.</em></h2>
+        <p class="section-aside reveal">Project descriptions are intentionally high-level. Detailed case studies and public repository links can be added where sharing is permitted.</p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card is-featured reveal rise" style="--c:#ff6a3d">
+          <div class="work-cover">
+            <div class="cover-grid"></div><div class="cover-orb"></div>
+            <span class="cover-initials">PT</span>
+            <span class="cover-chip c1">Reservations</span><span class="cover-chip c2">Payments</span><span class="cover-chip c3">Shuttle ops</span>
+          </div>
+          <div class="work-body">
+            <div class="work-topline"><span>Parking management · SaaS</span><span class="work-flag">Featured project</span></div>
+            <h3>ParkToll</h3>
+            <p>A multi-tenant airport parking management platform covering reservations, payments, shuttle operations, vendor workflows, and external provider integrations.</p>
+            <ul class="chips"><li>Laravel</li><li>Multi-tenancy</li><li>API integrations</li><li>Payments</li></ul>
+            <span class="work-arrow" aria-hidden="true">↗</span>
+          </div>
+        </article>
+
+        <article class="work-card reveal rise" style="--c:#8aa4ff">
+          <div class="work-cover">
+            <div class="cover-grid"></div><div class="cover-orb"></div>
+            <span class="cover-initials">XR</span>
+            <span class="cover-chip c1">Money transfer</span><span class="cover-chip c2">Operations</span>
+          </div>
+          <div class="work-body">
+            <div class="work-topline"><span>Fintech · Remittance</span><span class="work-flag">Product</span></div>
+            <h3>XRemit Pro</h3>
+            <p>A remittance-focused product built around money transfer workflows and the operational needs of a financial service platform.</p>
+            <ul class="chips"><li>Laravel</li><li>Fintech</li><li>Backend</li></ul>
+            <span class="work-arrow" aria-hidden="true">↗</span>
+          </div>
+        </article>
+
+        <article class="work-card reveal rise" style="--c:#5ee6b0">
+          <div class="work-cover">
+            <div class="cover-grid"></div><div class="cover-orb"></div>
+            <span class="cover-initials">QR</span>
+            <span class="cover-chip c1">QR payments</span><span class="cover-chip c2">Flutter app</span>
+          </div>
+          <div class="work-body">
+            <div class="work-topline"><span>Payments · Mobile</span><span class="work-flag">Product</span></div>
+            <h3>QRPay</h3>
+            <p>A QR payment application combining a Laravel backend with a Flutter mobile application.</p>
+            <ul class="chips"><li>Laravel</li><li>Flutter</li><li>Payment workflows</li></ul>
+            <span class="work-arrow" aria-hidden="true">↗</span>
+          </div>
+        </article>
+
+        <article class="work-card reveal rise" style="--c:#f2c14e">
+          <div class="work-cover">
+            <div class="cover-grid"></div><div class="cover-orb"></div>
+            <span class="cover-initials">AC</span>
+            <span class="cover-chip c1">Web application</span><span class="cover-chip c2">Backend</span>
+          </div>
+          <div class="work-body">
+            <div class="work-topline"><span>Web application</span><span class="work-flag">Product</span></div>
+            <h3>AdCrypto</h3>
+            <p>A web product from my experience building backend-driven applications and business features.</p>
+            <ul class="chips"><li>Laravel</li><li>PHP</li><li>Web application</li></ul>
+            <span class="work-arrow" aria-hidden="true">↗</span>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- EXPERTISE -->
-    <section class="expertise-section section" id="expertise">
-      <div class="container">
-        <div class="section-label reveal"><span>02</span> / WHAT I WORK WITH</div>
-        <div class="expertise-head"><h2 class="section-heading reveal-words">Tools for building <em>the real thing.</em></h2><p class="section-aside reveal">My current toolkit is centered around Laravel backend engineering, APIs, and the infrastructure that helps applications run reliably.</p></div>
-        <div class="skills-grid">
-          <article class="skill-card glow-card tilt reveal"><div class="skill-icon">⌘</div><h3>Backend</h3><p>PHP · Laravel · OOP · Service Layer · REST API</p><span class="skill-index">01</span></article>
-          <article class="skill-card glow-card tilt reveal"><div class="skill-icon">▤</div><h3>Data &amp; performance</h3><p>MySQL · Redis · Query optimization · Caching</p><span class="skill-index">02</span></article>
-          <article class="skill-card glow-card tilt reveal"><div class="skill-icon">⌁</div><h3>Engineering practices</h3><p>Git · PHPUnit / Pest · API integrations · Debugging</p><span class="skill-index">03</span></article>
-          <article class="skill-card glow-card tilt reveal"><div class="skill-icon">◫</div><h3>Delivery &amp; tools</h3><p>Linux · SSH · Docker · GitHub Actions · CI/CD learning</p><span class="skill-index">04</span></article>
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section experience" id="experience">
+      <div class="container experience-grid">
+        <div class="experience-intro">
+          <div class="section-label reveal"><span>04</span> Experience &amp; recognition</div>
+          <h2 class="section-heading reveal-words">Growing through <em>every build.</em></h2>
+          <p class="section-aside reveal">Focused on becoming a stronger engineer through ownership, thoughtful implementation, and continuous learning.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-track" aria-hidden="true"><i class="timeline-fill"></i></div>
+          <article class="timeline-item is-current reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-head"><span class="timeline-date">Present</span><span class="badge"><i class="status-dot"></i> Current role</span></div>
+            <h3>Software Engineer</h3>
+            <div class="timeline-company">AppDevs</div>
+            <p>Working on Laravel-based applications, backend features, integrations, and business workflows.</p>
+            <ul class="chips"><li>Laravel</li><li>APIs</li><li>Integrations</li><li>Payments</li></ul>
+          </article>
+          
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-head"><span class="timeline-date">Feb 2023 — May 2023</span><span class="badge">Where it started</span></div>
+            <h3>Junior Laravel Developer</h3>
+            <div class="timeline-company">AppDevs &amp; AmaderCodeLab</div>
+            <p>Started my professional journey as a Laravel developer — building backend features and learning how production software is shipped.</p>
+            <ul class="chips"><li>PHP</li><li>Laravel</li><li>MySQL</li></ul>
+          </article>
+          
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="projects-section section container" id="projects">
-      <div class="section-label reveal"><span>03</span> / SELECTED WORK</div>
-      <div class="projects-head"><h2 class="section-heading reveal-words">Products I've helped <em>bring to life.</em></h2></div>
-      <div class="project-list">
-        <article class="project-card reveal">
-          <div class="project-number">01</div><div class="project-main"><div class="project-topline"><span class="project-type">PARKING MANAGEMENT · SAAS</span><span class="project-year">FEATURED PROJECT</span></div><h3>ParkToll</h3><p>A multi-tenant airport parking management platform covering reservations, payments, shuttle operations, vendor workflows, and external provider integrations.</p><div class="tags"><span>Laravel</span><span>Multi-tenancy</span><span>API integrations</span><span>Payments</span></div></div><div class="project-arrow">↗</div>
-        </article>
-        <article class="project-card reveal">
-          <div class="project-number">02</div><div class="project-main"><div class="project-topline"><span class="project-type">FINTECH · REMITTANCE</span><span class="project-year">PRODUCT</span></div><h3>XRemit Pro</h3><p>A remittance-focused product built around money transfer workflows and the operational needs of a financial service platform.</p><div class="tags"><span>Laravel</span><span>Fintech</span><span>Backend</span></div></div><div class="project-arrow">↗</div>
-        </article>
-        <article class="project-card reveal">
-          <div class="project-number">03</div><div class="project-main"><div class="project-topline"><span class="project-type">PAYMENTS · MOBILE</span><span class="project-year">PRODUCT</span></div><h3>QRPay</h3><p>A QR payment application combining a Laravel backend with a Flutter mobile application.</p><div class="tags"><span>Laravel</span><span>Flutter</span><span>Payment workflows</span></div></div><div class="project-arrow">↗</div>
-        </article>
-        <article class="project-card reveal">
-          <div class="project-number">04</div><div class="project-main"><div class="project-topline"><span class="project-type">WEB APPLICATION</span><span class="project-year">PRODUCT</span></div><h3>AdCrypto</h3><p>A web product from my experience building backend-driven applications and business features.</p><div class="tags"><span>Laravel</span><span>PHP</span><span>Web application</span></div></div><div class="project-arrow">↗</div>
-        </article>
-      </div>
-      <p class="project-note reveal">Project descriptions are intentionally high-level. Detailed case studies and public repository links can be added where sharing is permitted.</p>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section class="experience-section section" id="experience">
-      <div class="container">
-        <div class="section-label reveal"><span>04</span> / EXPERIENCE &amp; RECOGNITION</div>
-        <div class="experience-grid">
-          <div class="experience-intro"><h2 class="section-heading reveal-words">Growing through <em>every build.</em></h2><p class="section-aside reveal">Focused on becoming a stronger engineer through ownership, thoughtful implementation, and continuous learning.</p></div>
-          <div class="timeline">
-            <div class="timeline-track" aria-hidden="true"><i class="timeline-fill"></i></div>
-            <article class="timeline-item is-current reveal">
-              <span class="timeline-dot"></span>
-              <div class="timeline-head"><div class="timeline-date">PRESENT</div><span class="timeline-badge"><i class="status-dot"></i> Current role</span></div>
-              <h3>Software Engineer</h3>
-              <div class="timeline-company">AppDevs</div>
-              <p>Working on Laravel-based applications, backend features, integrations, and business workflows.</p>
-              <div class="tags"><span>Laravel</span><span>APIs</span><span>Integrations</span><span>Payments</span></div>
-            </article>
-            
-            <article class="timeline-item reveal">
-              <span class="timeline-dot"></span>
-              <div class="timeline-head"><div class="timeline-date">FEB 2023 — MAY 2023</div><span class="timeline-badge">Where it started</span></div>
-              <h3>Junior Laravel Developer</h3>
-              <div class="timeline-company">AppDevs &amp; AmaderCodeLab</div>
-              <p>Started my professional journey as a Laravel developer — building backend features and learning how production software is shipped.</p>
-              <div class="tags"><span>PHP</span><span>Laravel</span><span>MySQL</span></div>
-            </article>
-            
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact container" id="contact">
+      <div class="contact-panel reveal">
+        <div class="contact-glow" aria-hidden="true"></div>
+        <div class="section-label"><span>05</span> Get in touch</div>
+        <p class="contact-kicker">Have a project or an idea?</p>
+        <h2 class="contact-title reveal-words">Let's build something <em>that matters.</em></h2>
+        <div class="contact-row">
+          <p class="contact-copy">I'm always interested in thoughtful conversations about software, backend engineering, and useful digital products.</p>
+          <div class="contact-actions">
+            <a class="button button-primary button-lg magnetic" href="https://github.com/AMIRSOHELAKASH" target="_blank" rel="noreferrer"><span>Visit my GitHub</span><span class="btn-icon">↗</span></a>
+            <button class="button button-ghost button-lg magnetic" id="copy-profile" type="button" data-copy="https://github.com/AMIRSOHELAKASH"><span>Copy GitHub link</span><span>⧉</span></button>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact-section section container" id="contact">
-      <div class="contact-panel reveal">
-        <div class="contact-orb" aria-hidden="true"></div>
-        <div class="section-label"><span>05</span> / GET IN TOUCH</div>
-        <p class="contact-kicker">HAVE A PROJECT OR AN IDEA?</p>
-        <h2 class="reveal-words">Let's build something <em>that matters.</em></h2>
-        <p class="contact-copy">I'm always interested in thoughtful conversations about software, backend engineering, and useful digital products.</p>
-        <div class="contact-actions"><a class="button button-primary magnetic" href="https://github.com/AMIRSOHELAKASH" target="_blank" rel="noreferrer"><span class="btn-label">Visit my GitHub</span> <span class="btn-icon">↗</span></a><button class="button button-ghost magnetic" id="copy-profile" type="button" data-copy="https://github.com/AMIRSOHELAKASH"><span class="btn-label">Copy GitHub link</span> <span>▣</span></button></div>
+        <dl class="contact-meta">
+          <div><dt>GitHub</dt><dd><a href="https://github.com/AMIRSOHELAKASH" target="_blank" rel="noreferrer">@AMIRSOHELAKASH</a></dd></div>
+          <div><dt>Location</dt><dd>Bangladesh</dd></div>
+          <div><dt>Local time</dt><dd><time data-clock>--:--</time> (GMT+6)</dd></div>
+        </dl>
       </div>
     </section>
   </main>
 
+  <!-- ============ FOOTER ============ -->
   <footer class="footer container">
-    <div class="footer-big" aria-hidden="true">AMIR<em>SOHEL</em></div>
-    <div class="footer-row"><a class="brand" href="#home"><span class="brand-mark">A<span>.</span></span><span class="brand-text">AMIR SOHEL</span></a><span>Designed &amp; built with care.</span><a href="#home" class="back-top">BACK TO TOP ↑</a><span class="copyright">© <span id="year"></span> Amir Sohel</span></div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#home"><span class="brand-mark">AS</span><span class="brand-copy"><b>Amir Sohel</b><small>Software Engineer</small></span></a>
+        <p>Designed &amp; built with care.</p>
+      </div>
+      <nav class="footer-col" aria-label="Footer navigation">
+        <span>Sitemap</span>
+        <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-col">
+        <span>Elsewhere</span>
+        <a href="https://github.com/AMIRSOHELAKASH" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="copyright">© <span id="year"></span> Amir Sohel</span>
+      <a href="#home" class="back-top">Back to top ↑</a>
+    </div>
   </footer>
+
   <div class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
